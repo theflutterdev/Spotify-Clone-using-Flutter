@@ -1,0 +1,142 @@
+{
+    "users": [
+        {
+            "name": "String",
+            "nameIndex": "Charecter",
+            "user_dob": "TimeStamp",
+            "premiumMember": "Boolean",
+            "user_activites": {
+                "songHistory": [
+                    {
+                        "songId": "String",
+                        "lastPlayed": "TimeStamp"
+                        
+                    }
+                ],
+                "playlistHistory": [
+                    {
+                        "playListId": "String",
+                        "playlistUserId": "String",
+                        "lastPlayed": "TimeStamp"
+                        
+                    }
+                ],
+                "likedSongs": [
+                    {
+                        "songId": "String",
+                        "likedTime": "Timestamp"
+                    }
+                ],
+                "likedAlbums": [
+                    {
+                        "albumId": "String",
+                        "likedTime": "Timestamp"
+                    }
+                ]
+            },
+            "userCreatedPlayLists":[
+                {
+                    "playlistId": "String",
+                    "playlistName": "String",
+                    "playlistNameIndex": "Character",
+                    "playlistCreatedTime": "TimeStamp",
+                    "public": "Boolean",
+                    "likes": "Integer",
+                    "songs": [
+                        {
+                            "songId": "String",
+                            "addedTime": "TimeStamp"
+                        }
+                    ]
+                }
+            ],
+            "forkedPlaylists": [
+                {
+                    "playlistId": "String",
+                    "playlistName": "String",
+                    "playlistCreatedTime": "TimeStamp",
+                    "playlistForkedTime": "TimeStamp",
+                    "secret": "Boolean",
+                    "songs": [
+                        {
+                            "songId": "String",
+                            "addedTime": "TimeStamp",
+                            "disable": "Boolean"
+                        }
+                    ]
+                }
+            ]
+
+        }
+    ],
+
+    "artists": [
+        {
+            "artistId": "String",
+            "name": "String",
+            "artistIndex": "Character",
+            "date": "TimeStamp",
+            "followers": "Integer",
+            "monthlyListerners": "Integer",
+            "coverImageUrl": "String: url/image"
+        }
+    ],
+
+    "categories": [
+        {
+            "categoryId": "String",
+            "isActive": "Boolean",
+            "categoryTitle": "String",
+            "categoryThumbnailUrl": "String url/image"
+        }
+    ],
+
+    "songs": [
+        {
+            "songId": "String",
+            "songTitle": "String",
+            "songIndex": "Character",
+            "releasedTimestamp": "String",
+            "audioUrl": "String: url/image",
+            "performedBy": "String",
+            "writtenBy": "String",
+            "producedBy": "String",
+            "source": "String",
+            "numberOfPlays": "Integer",
+            "artistId": "String",
+            "categories": [
+                {
+                    "categoryId": "String"
+                }
+            ],
+            "lyrics": [
+                {
+                    "startTimeStamp": "TimeStamp",
+                    "endTimeStamp": "TimeStamp",
+                    "content": "String",
+                    "isGlimse": "Boolean"
+                }
+            ],
+            "album": {
+                "isFromAnAlbum": "Boolean",
+                "albumId": "String"
+            }
+        }
+    ],
+
+    "albums": [
+        {
+            "artistId": "String",
+            "albumTitle": "String",
+            "ablumIndex": "Character",
+            "releasedTime": "Timestamp",
+            "copyrightOwnership": "String",
+            "albumThumbnail": "String url/image",
+            "albumSongs": [
+                {
+                    "songId": "String"
+                }
+            ]
+        }
+    ]
+}
