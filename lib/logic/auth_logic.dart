@@ -152,3 +152,31 @@ class CreateUserAccount extends ChangeNotifier{
   }
 
 }
+
+
+class ForgotPassword extends ChangeNotifier{
+  String email;
+  ShowCustomAlertDialog showCustomAlertDialog = ShowCustomAlertDialog();
+  bool getLinkEnable = false;
+  void buttonActivateListener(String text){
+    //print(text);
+    email = text;
+    if(text.length > 5){
+      getLinkEnable = true;
+      notifyListeners();
+    }else{
+      getLinkEnable = false;
+      notifyListeners();
+    }
+  }
+  Future<bool> sendEmail(BuildContext context ,String email)async{
+    try{
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+      return true;
+    }catch(e){
+      print(e.message);
+      showCustomAlertDialog.showCustomDialog(context, e.message);
+      return false;
+    }
+  }
+}

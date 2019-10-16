@@ -32,6 +32,16 @@
                         "albumId": "String",
                         "likedTime": "Timestamp"
                     }
+                ],
+                "likedCategories": [
+                    {
+                        "artistId": "String"
+                    }
+                ],
+                "recomendedArtists": [
+                    {
+                        "artistId": "String"
+                    }
                 ]
             },
             "userCreatedPlayLists":[
@@ -87,6 +97,7 @@
             "categoryId": "String",
             "isActive": "Boolean",
             "categoryTitle": "String",
+            "categoryIndex": "Char",
             "categoryThumbnailUrl": "String url/image"
         }
     ],
@@ -97,7 +108,8 @@
             "songTitle": "String",
             "songIndex": "Character",
             "releasedTimestamp": "String",
-            "audioUrl": "String: url/image",
+            "songThumbnail": "String",
+            "audioUrl": "String: url/mp3",
             "performedBy": "String",
             "writtenBy": "String",
             "producedBy": "String",
@@ -126,17 +138,13 @@
 
     "albums": [
         {
+            "albumId": "String",
             "artistId": "String",
             "albumTitle": "String",
             "ablumIndex": "Character",
             "releasedTime": "Timestamp",
             "copyrightOwnership": "String",
-            "albumThumbnail": "String url/image",
-            "albumSongs": [
-                {
-                    "songId": "String"
-                }
-            ]
+            "albumThumbnail": "String url/image"
         }
     ]
 }

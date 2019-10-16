@@ -1,7 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:spotify_clone/components/admin.dart';
 import 'package:spotify_clone/components/spotify_home.dart';
+import 'package:spotify_clone/logic/admin_logic.dart';
 import 'package:spotify_clone/logic/auth_logic.dart';
 import 'package:spotify_clone/logic/basic_ui.dart';
 
@@ -118,6 +120,42 @@ class AuthUI extends StatelessWidget {
                           width: 5.0,
                         ),
                         Text("EMAIL", style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16.0,
+                        ),),
+                      ],
+                    ),
+                  )
+                ),
+                SizedBox(
+                  height: 10.0,
+                ),
+                MaterialButton(
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Material(
+                      child: ChangeNotifierProvider(
+                        builder: (_)=>Admin(),
+                        child: SpotifyAdmin(),
+                      ),
+                    )));
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(10.0),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(100.0),
+                    ),
+                    margin: EdgeInsets.fromLTRB(50.0, 0.0, 50.0, 0.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(Icons.mail_outline, color: Colors.black,),
+                        SizedBox(
+                          width: 5.0,
+                        ),
+                        Text("Admin", style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
                           fontSize: 16.0,
@@ -559,7 +597,108 @@ class LoginPage extends StatelessWidget {
                     ),),
                   ),
                 ),
+
+                SizedBox(
+                  height: 30.0,
+                ),
+
+            Center(
+              child: InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Material(
+                    child: ChangeNotifierProvider(builder: (context)=>ForgotPassword(), child: PasswordRecovery(),),
+                  )));
+                },
+                child: Container(
+                  padding: EdgeInsets.fromLTRB(30.0, 7.0, 30.0, 7.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100.0),
+                    border: Border.all(color: Colors.grey, width: 1.0),
+                  ),
+                  child: Text("FORGOT YOUR PASSWORD?", style: TextStyle(
+                    fontFamily: 'Proxima Nova Bold',
+                    fontSize: 14.0,
+                  ),),
+                ),
+              ),
+            ),
                         
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+class PasswordRecovery extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final forgotObj = Provider.of<ForgotPassword>(context);
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        elevation: 0.0,
+        title: Text("Forgot your password?", style: TextStyle(
+          fontFamily: 'Proxima Nova Bold',
+        ),),
+        centerTitle: true,
+      ),
+      body: Container(
+        padding: EdgeInsets.all(10.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text("Email or username", style: TextStyle(
+              fontFamily: 'Proxima Nova Bold',
+              fontSize: 35.0,
+            ),),
+            SizedBox(
+              height: 10.0,
+            ),
+            TextFormField(
+              autofocus: false,
+              decoration: InputDecoration(
+                focusColor: Colors.black,
+                contentPadding: EdgeInsets.all(16.0),
+                fillColor: Colors.grey,
+                filled: true,
+                border: OutlineInputBorder(),
+                disabledBorder: InputBorder.none,
+              ),
+              onChanged: (String text){
+                forgotObj.buttonActivateListener(text);
+              },
+            ),
+            SizedBox(
+              height: 5.0,
+            ),
+            Text("We'll send a link to your email that will log you in."),
+            SizedBox(
+              height: 5.0,
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Center(
+              child: RaisedButton(
+                padding: EdgeInsets.fromLTRB(35.0, 20.0, 35.0, 20.0),
+                color: forgotObj.getLinkEnable ? Colors.white : Colors.grey,
+                onPressed: ()async{
+                  forgotObj.getLinkEnable ? (await forgotObj.sendEmail(context ,forgotObj.email)) ? forgotObj.showCustomAlertDialog.showCustomDialog(context, "An Email was sent to you to reset your Password, Check your inbox.") : print("Something went wrong") : forgotObj.showCustomAlertDialog.showCustomDialog(context, "Please enter valid Email");
+                },
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(100.0),
+                ),
+                child: Text("GET LINK", style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16.0,
+                  fontFamily: 'Proxima Nova Bold',
+                ),),
+              ),
+            )
           ],
         ),
       ),

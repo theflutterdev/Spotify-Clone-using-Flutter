@@ -28,7 +28,7 @@ class SpotifyHome extends StatelessWidget {
                     ),
                   ),), (Route<dynamic> route)=>false);
                 }else{
-
+                  
                 }
               },
               child: Text("Log out"),
