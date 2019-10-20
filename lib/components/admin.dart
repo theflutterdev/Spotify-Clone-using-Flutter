@@ -291,7 +291,7 @@ class AddSong extends StatelessWidget {
                 RaisedButton(
                   color: Colors.blue,
                   onPressed: (){
-                    adminObj.addSongs(adminObj.audioName, adminObj.audioUrl, adminObj.performedBy, adminObj.writtenBy, adminObj.producedBy, adminObj.source, artistId, categoriesOfMusic, adminObj.lyrics, adminObj.albumofSong);
+                    adminObj.addSongs(adminObj.audioName, adminObj.audioUrl, adminObj.performedBy, adminObj.writtenBy, adminObj.producedBy, adminObj.source, artistId, adminObj.songThumbnail, categoriesOfMusic, adminObj.lyrics, adminObj.albumofSong);
                   },
                   child: Text("Add Song"),
                 )

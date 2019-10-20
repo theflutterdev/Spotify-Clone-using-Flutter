@@ -3,9 +3,7 @@
         {
             "name": "String",
             "nameIndex": "Charecter",
-            "user_dob": "TimeStamp",
             "premiumMember": "Boolean",
-            "user_activites": {
                 "songHistory": [
                     {
                         "songId": "String",
@@ -42,8 +40,8 @@
                     {
                         "artistId": "String"
                     }
-                ]
-            },
+                ],
+        
             "userCreatedPlayLists":[
                 {
                     "playlistId": "String",

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -37,6 +38,8 @@ class LoginLogic extends ChangeNotifier{
   bool loginButton = false;
   bool showPassword = false;
   bool isAuthenticating = false;
+
+  String email, password;
 
   void showPassFun(){
     showPassword = !showPassword;
@@ -130,6 +133,13 @@ class CreateUserAccount extends ChangeNotifier{
     try{
       FirebaseUser user = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password);
       print("Signed up as : "+user.uid);
+      await Firestore.instance.collection("users").document(user.uid).setData({
+        "name": name,
+        "nameIndex": name[0],
+        "premiumMember": false,
+        "email": email,
+        "uid": user.uid
+      });
       isCreatingAccount = false;
       notifyListeners();
       Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>MultiProvider(

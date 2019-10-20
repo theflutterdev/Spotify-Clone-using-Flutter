@@ -503,8 +503,6 @@ class CreateAccount extends StatelessWidget {
 
 
 class LoginPage extends StatelessWidget {
-  final TextEditingController emailCtrl = TextEditingController();
-  final TextEditingController passCtrl = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final loginLogic = Provider.of<LoginLogic>(context);
@@ -529,7 +527,6 @@ class LoginPage extends StatelessWidget {
               height: 5.0,
             ),
             TextFormField(
-              controller: emailCtrl,
               autofocus: false,
               decoration: InputDecoration(
               contentPadding: EdgeInsets.all(16.0),
@@ -538,7 +535,8 @@ class LoginPage extends StatelessWidget {
                 border: OutlineInputBorder(),
               ),
               onChanged: (String text){
-                loginLogic.loginButtonListener(emailCtrl.text, passCtrl.text);
+                loginLogic.email = text;
+                loginLogic.loginButtonListener(loginLogic.email, loginLogic.password);
               },
             ),
 
@@ -555,7 +553,6 @@ class LoginPage extends StatelessWidget {
               height: 5.0,
             ),
             TextFormField(
-              controller: passCtrl,
               obscureText: !loginLogic.showPassword,
               autofocus: false,
               decoration: InputDecoration(
@@ -571,7 +568,8 @@ class LoginPage extends StatelessWidget {
                 )
               ),
               onChanged: (String text){
-                  loginLogic.loginButtonListener(emailCtrl.text, passCtrl.text);
+                  loginLogic.password = text;
+                  loginLogic.loginButtonListener(loginLogic.email, loginLogic.password);
                 },
               ),
 
@@ -584,7 +582,7 @@ class LoginPage extends StatelessWidget {
                     padding: EdgeInsets.fromLTRB(45.0, 15.0, 45.0, 15.0),
                     onPressed: (){
                       FocusScope.of(context).unfocus();
-                      loginLogic.loginButton ? loginLogic.loginIn(context ,emailCtrl.text, passCtrl.text) : uiComponents.showCustomDialog(context, "Enter your Email and Password") ;
+                      loginLogic.loginButton ? loginLogic.loginIn(context, loginLogic.email, loginLogic.password) : uiComponents.showCustomDialog(context, "Enter your Email and Password") ;
                     },
                     color: loginLogic.loginButton ? Colors.white : Colors.grey,
                     shape: RoundedRectangleBorder(
