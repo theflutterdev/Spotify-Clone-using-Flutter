@@ -18,7 +18,7 @@ class SpotifyAdmin extends StatelessWidget {
                 onTap: (){
                   Navigator.push(context, MaterialPageRoute(builder: (contex)=>Material(
                     child: ChangeNotifierProvider(
-                      builder: (_)=>Admin(),
+                      create: (_)=>Admin(),
                       child: AddArtist(),
                     ),
                   )));
@@ -33,7 +33,7 @@ class SpotifyAdmin extends StatelessWidget {
                 onTap: (){
                   Navigator.push(context, MaterialPageRoute(builder: (contex)=>Material(
                     child: ChangeNotifierProvider(
-                      builder: (_)=>Admin(),
+                      create: (_)=>Admin(),
                       child: AddCategory(),
                     ),
                   )));
@@ -48,7 +48,7 @@ class SpotifyAdmin extends StatelessWidget {
                 onTap: (){
                   Navigator.push(context, MaterialPageRoute(builder: (contex)=>Material(
                     child: ChangeNotifierProvider(
-                      builder: (_)=>Admin(),
+                      create: (_)=>Admin(),
                       child: AddSong(),
                     ),
                   )));
@@ -63,7 +63,7 @@ class SpotifyAdmin extends StatelessWidget {
                 onTap: (){
                   Navigator.push(context, MaterialPageRoute(builder: (contex)=>Material(
                     child: ChangeNotifierProvider(
-                      builder: (_)=>Admin(),
+                      create: (_)=>Admin(),
                       child: AddAlbum(),
                     ),
                   )));
@@ -259,7 +259,7 @@ class AddSong extends StatelessWidget {
                   onTap: (){
                     Navigator.push(context, MaterialPageRoute(builder: (contex)=>Material(
                       child: ChangeNotifierProvider(
-                        builder: (_)=>Admin(),
+                        create: (_)=>Admin(),
                         child: SelectArtist(),
                       ),
                     )));
@@ -277,7 +277,7 @@ class AddSong extends StatelessWidget {
                   onTap: (){
                     Navigator.push(context, MaterialPageRoute(builder: (contex)=>Material(
                       child: ChangeNotifierProvider(
-                        builder: (_)=>Admin(),
+                        create: (_)=>Admin(),
                         child: SelectCategories(),
                       ),
                     )));
@@ -353,7 +353,7 @@ class AddAlbum extends StatelessWidget {
                   onTap: (){
                     Navigator.push(context, MaterialPageRoute(builder: (contex)=>Material(
                       child: ChangeNotifierProvider(
-                        builder: (_)=>Admin(),
+                        create: (_)=>Admin(),
                         child: SelectArtist(),
                       ),
                     )));
@@ -407,8 +407,8 @@ class SelectArtist extends StatelessWidget {
                                     onChanged: (String q)async{
                                       q = q.toUpperCase();
                                       if(q.length == 1){
-                                        QuerySnapshot qsnap = await Firestore.instance.collection("artists").where("artistIndex", isEqualTo: q.toUpperCase()).getDocuments();
-                                        adminObj.data = qsnap.documents;
+                                        QuerySnapshot qsnap = await FirebaseFirestore.instance.collection("artists").where("artistIndex", isEqualTo: q.toUpperCase()).get();
+                                        adminObj.data = qsnap.docs;
                                         adminObj.qdata = adminObj.data;
                                         adminObj.reloadTheState();
                                       }else{
@@ -475,8 +475,8 @@ class SelectCategories extends StatelessWidget {
                                     onChanged: (String q)async{
                                       q = q.toUpperCase();
                                       if(q.length == 1){
-                                        QuerySnapshot qsnap = await Firestore.instance.collection("categories").where("categoryIndex", isEqualTo: q.toUpperCase()).getDocuments();
-                                        adminObj.catData = qsnap.documents;
+                                        QuerySnapshot qsnap = await FirebaseFirestore.instance.collection("categories").where("categoryIndex", isEqualTo: q.toUpperCase()).get();
+                                        adminObj.catData = qsnap.docs;
                                         adminObj.qcatData = adminObj.catData;
                                         adminObj.reloadTheState();
                                       }else{

@@ -18,22 +18,22 @@ class RecentlyPlayedLogic extends ChangeNotifier{
   bool funCalled = false;
 
   List<RecentlyPlayedStuff> recntlyPlayedStuff = [];
-  void getSongHistory()async{
-    final FirebaseUser firebaseUser = await FirebaseAuth.instance.currentUser();
+  void getSongHistory() async{
+    final User firebaseUser = FirebaseAuth.instance.currentUser;
     print("Getting Data");
-    QuerySnapshot qsnap = await Firestore.instance.collection("users").document(firebaseUser.uid).collection("songHistory").getDocuments();
-    List<DocumentSnapshot> data = qsnap.documents;
+    QuerySnapshot qsnap = await FirebaseFirestore.instance.collection("users").doc(firebaseUser.uid).collection("songHistory").get();
+    List<DocumentSnapshot> data = qsnap.docs;
     recntlyPlayedStuff = [];
     for(int i=0; i<data.length; i++){
       print("Id "+data[i]['songId']);
-      await Firestore.instance.collection("songs").document(data[i]['songId']).get().then((documentSnapshot){
+      await FirebaseFirestore.instance.collection("songs").doc(data[i]['songId']).get().then((documentSnapshot){
         recntlyPlayedStuff.add(
           RecentlyPlayedStuff(
             id: data[i]['songId'],
             lastPlayed: data[i]['lastPlayed'],
-            thumbnail: documentSnapshot.data['songThumbnail'],
+            thumbnail: documentSnapshot['songThumbnail'],
             type: 'song',
-            title: documentSnapshot.data['songTitle'],
+            title: documentSnapshot['songTitle'],
           )
         );
       });
@@ -43,11 +43,11 @@ class RecentlyPlayedLogic extends ChangeNotifier{
   }
 
   void getPlaylistHis()async{
-    final FirebaseUser firebaseUser = await FirebaseAuth.instance.currentUser();
-    QuerySnapshot qsnap = await Firestore.instance.collection("users").document(firebaseUser.uid).collection("playlistHistory").getDocuments();
-    List<DocumentSnapshot> data = qsnap.documents;
+    final User firebaseUser = FirebaseAuth.instance.currentUser;
+    QuerySnapshot qsnap = await FirebaseFirestore.instance.collection("users").doc(firebaseUser.uid).collection("playlistHistory").get();
+    List<DocumentSnapshot> data = qsnap.docs;
     for(int i=0; i<data.length; i++){
-      await Firestore.instance.collection("users").document(data[i]['playlistUserId']).collection("userCreatedPlayLists").document(data[i]['playListId']).get().then((documentSnapshot){
+      await FirebaseFirestore.instance.collection("users").doc(data[i]['playlistUserId']).collection("userCreatedPlayLists").doc(data[i]['playListId']).get().then((documentSnapshot){
         recntlyPlayedStuff.add(RecentlyPlayedStuff(
           id: data[i]['playListId'],
           thumbnail: './images/spotify_smaller.png',

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:spotify_clone/logic/auth_logic.dart';
 import 'package:spotify_clone/logic/home_logic.dart';
 
 class SpotifyHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final sessionObject = Provider.of<SessionManagement>(context);
+    // final sessionObject = Provider.of<SessionManagement>(context);
     return Scaffold(
       bottomNavigationBar: Container(
         height: 60.0,
@@ -60,7 +59,7 @@ class SpotifyHome extends StatelessWidget {
                 children: <Widget>[
                   Material(
                     child: ChangeNotifierProvider(
-                      builder: (_)=>RecentlyPlayedLogic(),
+                      create: (_)=>RecentlyPlayedLogic(),
                       child: RecenlyPlayed(),
                     ),
                   )

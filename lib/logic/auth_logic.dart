@@ -8,10 +8,10 @@ import 'package:spotify_clone/logic/basic_ui.dart';
 
 
 class SessionManagement extends ChangeNotifier{
-  FirebaseUser fUser;
+  User fUser;
 
-  Future<FirebaseUser> currentUser()async{
-    FirebaseUser user = await FirebaseAuth.instance.currentUser();
+  Future<User> currentUser()async{
+    User user = FirebaseAuth.instance.currentUser;
     if(user == null){
       print("No User");
     }else{
@@ -62,13 +62,13 @@ class LoginLogic extends ChangeNotifier{
     isAuthenticating = true;
     notifyListeners();
     try{
-      FirebaseUser user = await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: pass);
-      print(user.uid);
+      UserCredential user = await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: pass);
+      print(user.user.uid);
       isAuthenticating = false;
       notifyListeners();
       Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>MultiProvider(
         providers: [
-          ChangeNotifierProvider(builder: (_)=>SessionManagement(),)
+          ChangeNotifierProvider(create: (_)=>SessionManagement(),)
         ],
         child: SpotifyHome(),
       )), (Route<dynamic> route)=>false);
@@ -131,20 +131,20 @@ class CreateUserAccount extends ChangeNotifier{
     isCreatingAccount = true;
     notifyListeners();
     try{
-      FirebaseUser user = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password);
-      print("Signed up as : "+user.uid);
-      await Firestore.instance.collection("users").document(user.uid).setData({
+      UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password);
+      print("Signed up as : "+userCredential.user.uid);
+      await FirebaseFirestore.instance.collection("users").doc(userCredential.user.uid).set({
         "name": name,
         "nameIndex": name[0],
         "premiumMember": false,
         "email": email,
-        "uid": user.uid
+        "uid": userCredential.user.uid
       });
       isCreatingAccount = false;
       notifyListeners();
       Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>MultiProvider(
         providers: [
-          ChangeNotifierProvider(builder: (_)=>SessionManagement(),)
+          ChangeNotifierProvider(create: (_)=>SessionManagement(),)
         ],
         child: SpotifyHome(),
       )), (Route<dynamic> route)=>false);

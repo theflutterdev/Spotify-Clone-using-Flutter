@@ -1,3 +1,7 @@
-cloud_firestore=/root/Android/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.8.2+3/
-firebase_auth=/root/Android/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.7.0/
-firebase_core=/root/Android/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.2.5+1/
+# This is a generated file; do not edit or check into version control.
+cloud_firestore=C:\\Users\\HAKIM\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\cloud_firestore-0.14.2\\
+cloud_firestore_web=C:\\Users\\HAKIM\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\cloud_firestore_web-0.2.0+5\\
+firebase_auth=C:\\Users\\HAKIM\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_auth-0.18.2\\
+firebase_auth_web=C:\\Users\\HAKIM\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_auth_web-0.3.1+2\\
+firebase_core=C:\\Users\\HAKIM\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_core-0.5.1\\
+firebase_core_web=C:\\Users\\HAKIM\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_core_web-0.2.0\\
