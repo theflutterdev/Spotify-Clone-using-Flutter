@@ -6,9 +6,9 @@ class Admin extends ChangeNotifier{
   String name, coverUrl;
   void addArtist(String name, String imageUrl){
     try{
-      var ref = Firestore.instance.collection("artists").document();
-      ref.setData({
-        "artistId": ref.documentID,
+      var ref = FirebaseFirestore.instance.collection("artists").doc();
+      ref.set({
+        "artistId": ref.id,
         "name": name,
         "artistIndex": name[0],
         "date": DateTime.now(),
@@ -27,9 +27,9 @@ class Admin extends ChangeNotifier{
 
   String catName, catImageUrl;
   void addCategory(String title, String thumbnailUrl){
-    var ref = Firestore.instance.collection("categories").document();
-    ref.setData({
-      "categoryId": ref.documentID,
+    var ref = FirebaseFirestore.instance.collection("categories").doc();
+    ref.set({
+      "categoryId": ref.id,
       "isActive": true,
       "categoryTitle": title,
       "categoryThumbnailUrl": thumbnailUrl,
@@ -57,10 +57,10 @@ class Admin extends ChangeNotifier{
   List<DocumentSnapshot> qcatData = [];
  
   void addSongs(String title, String audioUrl, String performedBy, String writtenBy, String producedBy, String source, String artistIdInside, String songthumbnail, List<Map<String, dynamic>> categories, List<Map<String, dynamic>> lyrics, Map<String, dynamic> albumInfo){
-    var ref = Firestore.instance.collection("songs").document();
+    var ref = FirebaseFirestore.instance.collection("songs").doc();
     print(artistIdInside);
-    ref.setData({
-      "songId": ref.documentID,
+    ref.set({
+      "songId": ref.id,
       "songTitle": title,
       "songIndex": title[0],
       "songThumbnail": songthumbnail,
@@ -85,9 +85,9 @@ class Admin extends ChangeNotifier{
 
   String albumTitle, copyrightOwnership, albumThumbnail;
   void addAlbum(String artistId ,String title, String copyrightOwnership, String albumThumbnail){
-    var ref = Firestore.instance.collection("albums").document();
-    ref.setData({
-      "albumId": ref.documentID,
+    var ref = FirebaseFirestore.instance.collection("albums").doc();
+    ref.set({
+      "albumId": ref.id,
       "artistId": artistId,
       "albumTitle": title,
       "albumIndex": title[0],

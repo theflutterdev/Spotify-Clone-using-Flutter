@@ -1,36 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="main.dart" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/main.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
   </component>
-  <component name="ToolWindowManager">
-    <editor active="true" />
-    <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-    </layout>
+  <component name="ChangeListManager">
+    <list default="true" id="9e43f460-0dc0-4c23-ac9b-310613e162b0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <option name="show-excluded-files" value="false" />
-      </pane>
-    </panes>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="master" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_USER" value="Amegodev" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="Spotify-Clone-using-Flutter" />
+  </component>
+  <component name="ProjectId" id="1jc8hlPnuTSIHtcpsLqAQ8fkzsm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="dart.analysis.tool.window.force.activate" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9e43f460-0dc0-4c23-ac9b-310613e162b0" name="Default Changelist" comment="" />
+      <created>1604092141096</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604092141096</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Upgrading pre version 1.12">
+      <created>1604143157878</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604143157878</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Upgrading pre version 1.12" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upgrading pre version 1.12" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="706" y="358" width="627" height="446" key="#Notifications" timestamp="1604143503624">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="706" y="358" width="627" height="446" key="#Notifications/0.0.1920.1050/122.-960.1704.930@0.0.1920.1050" timestamp="1604143503624" />
+    <state x="100" y="100" width="1720" height="850" key="AVDManager" timestamp="1604108522321">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="100" y="100" width="1720" height="850" key="AVDManager/0.0.1920.1050/122.-960.1704.930@0.0.1920.1050" timestamp="1604108522321" />
+    <state x="438" y="88" width="1109" height="884" key="CommitChangelistDialog2" timestamp="1604143153893">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="438" y="88" width="1109" height="884" key="CommitChangelistDialog2/0.0.1920.1050/122.-960.1704.930@0.0.1920.1050" timestamp="1604143153893" />
+    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1604101901139">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050/122.-960.1704.930@0.0.1920.1050" timestamp="1604101901139" />
+    <state x="554" y="384" key="Github.CreatePullRequestDialog" timestamp="1604143460796">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="554" y="384" key="Github.CreatePullRequestDialog/0.0.1920.1050/122.-960.1704.930@0.0.1920.1050" timestamp="1604143460796" />
+    <state width="1327" height="373" key="GridCell.Tab.0.bottom" timestamp="1604108824404">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1327" height="373" key="GridCell.Tab.0.bottom/0.0.1920.1050/122.-960.1704.930@0.0.1920.1050" timestamp="1604108824404" />
+    <state width="1327" height="373" key="GridCell.Tab.0.center" timestamp="1604108824404">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1327" height="373" key="GridCell.Tab.0.center/0.0.1920.1050/122.-960.1704.930@0.0.1920.1050" timestamp="1604108824404" />
+    <state width="1327" height="373" key="GridCell.Tab.0.left" timestamp="1604108824404">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1327" height="373" key="GridCell.Tab.0.left/0.0.1920.1050/122.-960.1704.930@0.0.1920.1050" timestamp="1604108824404" />
+    <state width="1327" height="373" key="GridCell.Tab.0.right" timestamp="1604108824404">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1327" height="373" key="GridCell.Tab.0.right/0.0.1920.1050/122.-960.1704.930@0.0.1920.1050" timestamp="1604108824404" />
+    <state x="413" y="248" key="Vcs.Push.Dialog.v2" timestamp="1604143166693">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="413" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1050/122.-960.1704.930@0.0.1920.1050" timestamp="1604143166693" />
+    <state x="660" y="98" width="1019" height="758" key="find.popup" timestamp="1604108287214">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="660" y="98" width="1019" height="758" key="find.popup/0.0.1920.1050/122.-960.1704.930@0.0.1920.1050" timestamp="1604108287214" />
+    <state x="623" y="231" width="672" height="678" key="search.everywhere.popup" timestamp="1604143215335">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="231" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/122.-960.1704.930@0.0.1920.1050" timestamp="1604143215335" />
   </component>
 </project>

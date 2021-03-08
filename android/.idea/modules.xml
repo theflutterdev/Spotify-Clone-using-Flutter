@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/android.iml" filepath="$PROJECT_DIR$/android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$USER_HOME$/Android/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.8.2+3/android/cloud_firestore.iml" filepath="$USER_HOME$/Android/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.8.2+3/android/cloud_firestore.iml" />
-      <module fileurl="file://$USER_HOME$/Android/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.7.0/android/firebase_auth.iml" filepath="$USER_HOME$/Android/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.7.0/android/firebase_auth.iml" />
-      <module fileurl="file://$USER_HOME$/Android/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.2.5+1/android/firebase_core.iml" filepath="$USER_HOME$/Android/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.2.5+1/android/firebase_core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android.iml" filepath="$PROJECT_DIR$/.idea/modules/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/472931684/android.cloud_firestore.iml" filepath="$PROJECT_DIR$/.idea/modules/472931684/android.cloud_firestore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1183077014/android.cloud_firestore_web.iml" filepath="$PROJECT_DIR$/.idea/modules/1183077014/android.cloud_firestore_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1103787703/android.firebase_auth.iml" filepath="$PROJECT_DIR$/.idea/modules/-1103787703/android.firebase_auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1192936084/android.firebase_auth_web.iml" filepath="$PROJECT_DIR$/.idea/modules/1192936084/android.firebase_auth_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-719062191/android.firebase_core.iml" filepath="$PROJECT_DIR$/.idea/modules/-719062191/android.firebase_core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-57891870/android.firebase_core_web.iml" filepath="$PROJECT_DIR$/.idea/modules/-57891870/android.firebase_core_web.iml" />
     </modules>
   </component>
 </project>

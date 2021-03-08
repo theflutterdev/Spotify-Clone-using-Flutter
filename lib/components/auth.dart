@@ -14,12 +14,12 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   Future onloadDecider() async {
-    FirebaseUser user = await FirebaseAuth.instance.currentUser();
+    User user = FirebaseAuth.instance.currentUser;
     if(user == null){
       print("No User");
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Material(
         child: ChangeNotifierProvider(
-          builder: (_)=>SessionManagement(),
+          create: (_)=>SessionManagement(),
           child: FirebaseSession(),
         ),
       )));
@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Material(
         child: MultiProvider(
           providers: [
-            ChangeNotifierProvider(builder: (_)=>SessionManagement(),),
+            ChangeNotifierProvider(create: (_)=>SessionManagement(),),
           ],
           child: SpotifyHome(),
         ),
@@ -135,7 +135,7 @@ class AuthUI extends StatelessWidget {
                   onPressed: (){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>Material(
                       child: ChangeNotifierProvider(
-                        builder: (_)=>Admin(),
+                        create: (_)=>Admin(),
                         child: SpotifyAdmin(),
                       ),
                     )));
@@ -211,8 +211,8 @@ class SignupOrLogin extends StatelessWidget {
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>Material(
                     child: MultiProvider(
                       providers: [
-                        ChangeNotifierProvider(builder: (_)=>CreateUserAccount(),),
-                        ChangeNotifierProvider(builder: (_)=>ShowCustomAlertDialog(),),
+                        ChangeNotifierProvider(create: (_)=>CreateUserAccount(),),
+                        ChangeNotifierProvider(create: (_)=>ShowCustomAlertDialog(),),
                       ],
                       child: CreateAccount(),
                     ),
@@ -261,8 +261,8 @@ class SignupOrLogin extends StatelessWidget {
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>Material(
                     child: MultiProvider(
                       providers: [
-                        ChangeNotifierProvider(builder: (_)=>LoginLogic(),),
-                        ChangeNotifierProvider(builder: (_)=>ShowCustomAlertDialog(),),
+                        ChangeNotifierProvider(create: (_)=>LoginLogic(),),
+                        ChangeNotifierProvider(create: (_)=>ShowCustomAlertDialog(),),
                       ],
                       child: LoginPage(),
                     ),
@@ -604,7 +604,7 @@ class LoginPage extends StatelessWidget {
               child: InkWell(
                 onTap: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>Material(
-                    child: ChangeNotifierProvider(builder: (context)=>ForgotPassword(), child: PasswordRecovery(),),
+                    child: ChangeNotifierProvider(create: (context)=>ForgotPassword(), child: PasswordRecovery(),),
                   )));
                 },
                 child: Container(
